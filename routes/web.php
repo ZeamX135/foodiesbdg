@@ -32,5 +32,5 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 //route resource
-Route::resource('/makanan', \App\Http\Controllers\MakananController::class);
-Route::resource('/resep', \App\Http\Controllers\ResepController::class);
+Route::resource('/makanan', MakananController::class);
+Route::resource('/resep', ResepController::class);
