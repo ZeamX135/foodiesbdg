@@ -53,6 +53,7 @@
     </section>
     <!-- Hero Section end -->
 
+    {{-- Content Start --}}
     <div id="rekomendasi" class="makanan" style="display: flex; flex-wrap: wrap; width: 93.5rem; ">
         @foreach ($makanans as $makanan)
             <div class="" style="margin-top: 50px">
@@ -64,6 +65,7 @@
             </div>
         @endforeach
     </div>
+    {{-- Content End --}}
 
 </body>
 
