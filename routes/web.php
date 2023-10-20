@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ResepController;
 use App\Http\Controllers\MakananController;
+use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PageResepController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +19,10 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+Route::get('/pageresep', [PageResepController::class, 'index'])->name('resep');
+Route::get('/detail/{id}', [WelcomeController::class, 'detail'])->name('detailmakanan');
+Route::get('/detailresep/{id}', [PageResepController::class, 'detail'])->name('detailresep');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

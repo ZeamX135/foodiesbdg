@@ -19,7 +19,7 @@ class ResepController extends Controller
     public function index(): View
     {
         //get reseps
-        $reseps = Resep::latest()->paginate(5);
+        $reseps = Resep::latest()->paginate();
 
         //render view with reseps
         return view('reseps.index', compact('reseps'));

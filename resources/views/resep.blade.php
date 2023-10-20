@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>BandungCulinaryDelight</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Page Resep</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,10 +24,10 @@
     {{-- Navbar start --}}
     <nav class="navbar navbar-expand-lg shadow-sm">
         <div class="container-fluid">
-            <a class="navbar-brand ms-5" href="#">Foodies<span>.bdg</span></a>
+            <a class="navbar-brand ms-5" href="/">Foodies<span>.bdg</span></a>
             <ul class="navbar-nav me-5 d-flex">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#rekomendasi">Rekomendasi</a>
@@ -39,33 +40,18 @@
     </nav>
     {{-- Navbar end --}}
 
-    <!-- Hero Section start -->
-    <section class="hero" id="home">
-        <main class="content">
-            <h1>Foodies<span>.bdg</span></h1>
-            <p>
-                Selamat datang di
-            </p>
-            <p>
-                Foodies<span>.bdg</span>
-            </p>
-        </main>
-    </section>
-    <!-- Hero Section end -->
 
-    <div id="rekomendasi" class="makanan" style="display: flex; flex-wrap: wrap; width: 93.5rem; ">
-        @foreach ($makanans as $makanan)
+    <div id="rekomendasi" class="resep" style="display: flex; flex-wrap: wrap; width: 93.5rem; margin-top: 50px ">
+        @foreach ($reseps as $resep)
             <div class="" style="margin-top: 50px">
-                <img src="{{ asset('/storage/makanan/' . $makanan->image) }}" class="card-img-top contentimg"
+                <img src="{{ asset('/storage/resep/' . $resep->image) }}" class="card-img-top contentimg"
                     alt="...">
                 <div class="card-body contenttitle">
-                    <a href="{{ route('detailmakanan', $makanan->id) }}" h5 class="card-text">{{ $makanan->title }}</a>
+                    <a href="{{ route('detailresep', $resep->id) }}" h5 class="card-text">{{ $resep->title }}</a>
                 </div>
             </div>
         @endforeach
     </div>
-
 </body>
-
 
 </html>

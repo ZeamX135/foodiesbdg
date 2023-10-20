@@ -19,7 +19,7 @@ class MakananController extends Controller
     public function index(): View
     {
         //get makanans
-        $makanans = Makanan::latest()->paginate(5);
+        $makanans = Makanan::latest()->paginate();
 
         //render view with makanans
         return view('makanans.index', compact('makanans'));
