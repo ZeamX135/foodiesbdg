@@ -19,7 +19,7 @@ class ResepController extends Controller
     public function index(): View
     {
         //get reseps
-        $reseps = Resep::latest()->paginate();
+        $reseps = Resep::latest()->paginate(5);
 
         //render view with reseps
         return view('reseps.index', compact('reseps'));
@@ -150,5 +150,16 @@ class ResepController extends Controller
 
         //redirect to index
         return redirect()->route('resep.index')->with(['success' => 'Data Berhasil Dihapus!']);
+    }
+
+    public function cari(Request $request)
+    {
+        $keyword = $request->input('cari');
+
+        // mengambil data dari table makanan sesuai pencarian data
+        $reseps = Resep::where('title', 'like', "%" . $keyword . "%")->paginate(10);
+
+        // mengirim data makanan ke view index
+        return view('reseps.index', compact('reseps'));
     }
 }

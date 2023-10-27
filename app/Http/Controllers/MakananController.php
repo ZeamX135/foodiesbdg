@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 //import Model "Makanan"
 use App\Models\Makanan;
+use App\Models\Resep;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -19,7 +20,7 @@ class MakananController extends Controller
     public function index(): View
     {
         //get makanans
-        $makanans = Makanan::latest()->paginate();
+        $makanans = Makanan::latest()->paginate(5);
 
         //render view with makanans
         return view('makanans.index', compact('makanans'));
@@ -150,5 +151,16 @@ class MakananController extends Controller
 
         //redirect to index
         return redirect()->route('makanan.index')->with(['success' => 'Data Berhasil Dihapus!']);
+    }
+
+    public function cari(Request $request)
+    {
+        $keyword = $request->input('cari');
+
+        // mengambil data dari table makanan sesuai pencarian data
+        $makanans = Makanan::where('title', 'like', "%" . $keyword . "%")->paginate(10);
+
+        // mengirim data makanan ke view index
+        return view('makanans.index', compact('makanans'));
     }
 }

@@ -20,8 +20,21 @@
                 </div>
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
-                        <a href="{{ route('resep.create') }}" class="btn btn-md btn-success mb-3">TAMBAH POST</a>
-                        <a href="{{ route('dashboard') }}" class="btn btn-md btn-dark mb-3 float-right">KEMBALI</a>
+                        <div class="d-flex" style="justify-content: space-between;">
+                            <a href="{{ route('resep.create') }}" class="btn btn-md btn-success mb-3">TAMBAH POST</a>
+
+                            <div class="d-flex" style="width: 450px;">
+                                <form action="{{ route('resep.cari') }}" method="GET" style="right: 10px;"
+                                    class="mt-1 mx-auto max-w-xl  rounded-full">
+                                    <input type="text" name="cari" placeholder="Cari Judul"
+                                        value="{{ old('cari') }}" class=" pr-4 ">
+                                    <input type="submit" value="Search" class="">
+                                </form>
+
+                                <a href="{{ route('dashboard') }}"
+                                    class="btn btn-md btn-dark mb-3 float-right ms-2">KEMBALI</a>
+                            </div>
+                        </div>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>

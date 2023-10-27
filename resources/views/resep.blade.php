@@ -29,8 +29,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#rekomendasi">Rekomendasi</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/pageresep">Resep</a>
