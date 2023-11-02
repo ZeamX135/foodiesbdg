@@ -44,6 +44,48 @@
         </div>
         <p style="margin-top: 40px;">{!! $reseps->content !!}</p>
     </div>
+
+    {{-- Footer Start --}}
+    <footer>
+        <hr style="margin-bottom: 70px">
+        <div class="container">
+            <div class="footer-content-nav" style="margin-right:200px">
+                <h3>Blog</h3>
+                <ul class="list">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#rekomendasi">Rekomendasi</a></li>
+                    <li><a href="/pageresep">Resep</a></li>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <h3>Power By</h3>
+                <ul class="list">
+                    <p>Foodies<span>.bdg</span></p>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <h3>Ikuti Kami</h3>
+                <ul class="social-icons">
+                    <li>
+                        <a href=""><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fab fa-youtube"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <p>Copyright &copy; 2023 QuantumCodeX</p>
+        </div>
+    </footer>
+    {{-- Footer End --}}
 </body>
 
 </html>
