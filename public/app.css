@@ -128,8 +128,11 @@ body {
 
 /* Makanan Conntent */
 .makanan {
-    justify-content: space-evenly;
+    justify-content: center;
     margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
 }
 
 .contentimg {
@@ -182,7 +185,7 @@ body {
 /* Footer */
 footer {
     background: #fff;
-    padding-top: 200px;
+    padding-top: 250px;
 }
 .container {
     width: 1140px;

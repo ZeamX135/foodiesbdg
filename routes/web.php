@@ -42,3 +42,5 @@ Route::resource('/resep', ResepController::class);
 //Search Feature
 Route::get('/searchm', [MakananController::class, 'cari'])->name('makanan.cari');
 Route::get('/searchr', [ResepController::class, 'cari'])->name('resep.cari');
+Route::get('/search', [WelcomeController::class, 'cari'])->name('welcome.cari');
+Route::get('/searchp', [PageResepController::class, 'cari'])->name('pageresep.cari');

@@ -158,7 +158,9 @@ class MakananController extends Controller
         $keyword = $request->input('cari');
 
         // mengambil data dari table makanan sesuai pencarian data
-        $makanans = Makanan::where('title', 'like', "%" . $keyword . "%")->paginate(10);
+        // $makanans = Makanan::where('title', 'like', "%" . $keyword . "%")->paginate(5);
+        $makanans = Makanan::where('title', 'like', "%" . $keyword . "%")->orderBy('id', 'desc')->paginate(5);
+        $makanans->appends(['cari' => $keyword]);
 
         // mengirim data makanan ke view index
         return view('makanans.index', compact('makanans'));

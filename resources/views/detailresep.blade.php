@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Detail</title>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +16,7 @@
     <!-- Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('app.css') }}">
 </head>
 
@@ -67,16 +69,18 @@
                 <h3>Ikuti Kami</h3>
                 <ul class="social-icons">
                     <li>
-                        <a href=""><i class="fab fa-facebook"></i></a>
+                        <a href="https://facebook.com/"><i class="fab fa-facebook"></i></a>
                     </li>
                     <li>
-                        <a href=""><i class="fab fa-twitter"></i></a>
+                        <a href="https://twitter.com/home?lang=id"><i class="fab fa-twitter"></i></a>
                     </li>
                     <li>
-                        <a href=""><i class="fab fa-instagram"></i></a>
+                        <a
+                            href="https://www.instagram.com/xiirpll23/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="><i
+                                class="fab fa-instagram"></i></a>
                     </li>
                     <li>
-                        <a href=""><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
                     </li>
                 </ul>
             </div>
