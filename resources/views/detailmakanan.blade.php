@@ -55,9 +55,8 @@
         <div class="footer-content-nav" style="margin-right:200px">
             <h3>Blog</h3>
             <ul class="list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#rekomendasi">Rekomendasi</a></li>
-                <li><a href="/pageresep">Resep</a></li>
+                <li><a href="/welcome">Home</a></li>
+                <li><a href="/welcome">Rekomendasi</a></li>
             </ul>
         </div>
         <div class="footer-content">
