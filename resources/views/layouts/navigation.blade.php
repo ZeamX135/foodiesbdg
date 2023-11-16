@@ -14,6 +14,8 @@
                     <a class="text-dark-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                         href="/dashboard">Dashboard</a>
                     <a class="text-dark-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                        href="/rekomendasi">Data Rekomendasi</a>
+                    <a class="text-dark-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                         href="/makanan">Data Makanan</a>
                 </div>
             </div>

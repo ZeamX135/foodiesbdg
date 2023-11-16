@@ -14,6 +14,9 @@ class DashboardController extends Controller
     {
         //get posts
         $komen = Komen::latest()->paginate(5);
+        $title = 'Delete Data!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
 
         //render view with posts
         return view('dashboard', compact('komen'));
@@ -35,6 +38,7 @@ class DashboardController extends Controller
         $komen->delete();
 
         //redirect to index
-        return redirect()->back()->with(['success' => 'Data Berhasil Terhapus!']);
+        alert()->success('Masukkan Berhasil Dihapus');
+        return redirect()->back();
     }
 }

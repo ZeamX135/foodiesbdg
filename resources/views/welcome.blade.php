@@ -19,39 +19,39 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link rel="stylesheet" href="{{ asset('app.css') }}">
 
 </head>
 
 <body>
+    @include('sweetalert::alert')
     {{-- Navbar start --}}
-    <div class="adminnav">
-        <nav class="navbar navbar-expand-lg shadow-sm">
-            <div class="container-fluid">
-                <a class="navbar-brand ms-5" href="#">Foodies<span>.bdg</span></a>
-                <ul class="navbar-nav me-5 d-flex">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#rekomendasi">Rekomendasi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#komen">Beri Masukkan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#footer">About</a>
-                    </li>
-                </ul>
-                <form action="{{ route('welcome.cari') }}" method="GET" style="right: 10px; color"
-                    class="my-auto me-3 rounded-full row ">
-                    <input type="text" name="cari" placeholder="Cari Nama Makanan" value="{{ old('cari') }}"
-                        class="form-control col-6 w-75">
-                    <input type="submit" value="Search" class="col-3 btn btn-primary">
-                </form>
-            </div>
-        </nav>
-    </div>
+    <nav class="navbar navbar-expand-lg shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-5" href="#">Foodies<span>.bdg</span></a>
+            <ul class="navbar-nav me-5 d-flex">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#rekomendasi">Rekomendasi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#komen">Beri Masukkan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#footer">About</a>
+                </li>
+            </ul>
+            <form action="{{ route('welcome.cari') }}" method="GET" style="right: 10px; color"
+                class="my-auto me-3 rounded-full row ">
+                <input type="text" name="cari" placeholder="Cari Nama Makanan" value="{{ old('cari') }}"
+                    class="form-control col-6 w-75">
+                <input type="submit" value="Search" class="col-3 btn btn-primary">
+            </form>
+        </div>
+    </nav>
     {{-- Navbar end --}}
 
     <!-- Hero Section start -->
@@ -89,15 +89,31 @@
 
     {{-- Content Start --}}
 
+    <h3 id="rekomendasi" style="margin-top: 100px">ADA YANG RAME NIH!!</h3>
+    <div class="makanan pb-5" style="display: flex; flex-wrap: wrap; width: 93.5rem; background-color: #00AA13 ">
+        @foreach ($rekomendasis as $rekomendasi)
+            <div style="margin-top: 50px">
+                <a href="{{ route('detailrekomendasi', $rekomendasi->id) }}"><img
+                        src="{{ asset('/storage/rekomendasi/' . $rekomendasi->image) }}"
+                        class="card-img-top contentimg"></a>
+                <div class="card-body contenttitle">
+                    <a href="{{ route('detailrekomendasi', $rekomendasi->id) }}" h5
+                        class="card-text">{{ $rekomendasi->title }}</a>
+                </div>
+            </div>
+        @endforeach
+    </div>
+
     <h3 style="margin-top: 100px">DAFTAR MAKANAN</h3>
 
-    <div id="rekomendasi" class="makanan" style="display: flex; flex-wrap: wrap; width: 93.5rem; ">
+    <div class="makanan" style="display: flex; flex-wrap: wrap; width: 93.5rem; ">
         @foreach ($makanans as $makanan)
             <div class="" style="margin-top: 50px">
                 <a href="{{ route('detailmakanan', $makanan->id) }}"><img
                         src="{{ asset('/storage/makanan/' . $makanan->image) }}" class="card-img-top contentimg"></a>
                 <div class="card-body contenttitle">
-                    <a href="{{ route('detailmakanan', $makanan->id) }}" h5 class="card-text">{{ $makanan->title }}</a>
+                    <a href="{{ route('detailmakanan', $makanan->id) }}" h5
+                        class="card-text">{{ $makanan->title }}</a>
                 </div>
             </div>
         @endforeach
@@ -177,6 +193,9 @@
     </footer>
     {{-- Footer End --}}
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <script>
         //message with toastr
@@ -189,6 +208,5 @@
         @endif
     </script>
 </body>
-
 
 </html>

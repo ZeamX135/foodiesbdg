@@ -21,6 +21,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 */
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+Route::get('/detailrekomendasi/{id}', [WelcomeController::class, 'detailrekomendasi'])->name('detailrekomendasi');
 Route::get('/detail/{id}', [WelcomeController::class, 'detail'])->name('detailmakanan');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -37,12 +38,13 @@ Route::middleware('auth')->group(function () {
 });
 
 //route resource
-Route::resource('/makanan', MakananController::class);
+ Route::resource('/makanan', MakananController::class);
+ Route::resource('/rekomendasi', \App\Http\Controllers\RekomendasiController::class);
 
 //Search Feature
 Route::get('/searchm', [MakananController::class, 'cari'])->name('makanan.cari');
 Route::get('/search', [WelcomeController::class, 'cari'])->name('welcome.cari');
 
-Route::post('komen', [KomenController::class, 'store'])->name('komen.store');
+Route::post('komen', [WelcomeController::class, 'store'])->name('komen.store');
 
 require __DIR__.'/auth.php';

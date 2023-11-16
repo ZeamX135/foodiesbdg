@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 //import Model "Makanan"
 use App\Models\Makanan;
-use App\Models\Resep;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -96,6 +95,7 @@ class MakananController extends Controller
         $this->validate($request, [
             'image'     => 'image|mimes:jpeg,jpg,png|max:2048',
             'title'     => 'required|min:5',
+            'deskripsi' => 'required|min:5',
             'content'   => 'required|min:10'
         ]);
 
@@ -116,6 +116,7 @@ class MakananController extends Controller
             $makanans->update([
                 'image'     => $image->hashName(),
                 'title'     => $request->title,
+                'deskripsi' => $request->deskripsi,
                 'content'   => $request->content
             ]);
 
@@ -124,6 +125,7 @@ class MakananController extends Controller
             //update makanan without image
             $makanans->update([
                 'title'     => $request->title,
+                'deskripsi' => $request->deskripsi,
                 'content'   => $request->content
             ]);
         }
