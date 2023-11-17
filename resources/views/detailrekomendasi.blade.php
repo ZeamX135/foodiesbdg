@@ -21,19 +21,8 @@
 </head>
 
 <body>
-    {{-- Navbar start --}}
-    <nav class="navbar navbar-expand-lg shadow-sm">
-        <div class="container-fluid">
-            <a class="navbar-brand ms-5" href="#">Foodies<span>.bdg</span></a>
-            <ul class="navbar-nav me-5 d-flex">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Back</a>
-                </li>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    {{-- Navbar end --}}
+
+    @include('components.detailnavbar')
 
 
     <div class="detaildata" style="width: 80%; justify-content: center; margin: auto">
@@ -48,47 +37,6 @@
     </div>
 </body>
 
-{{-- Footer Start --}}
-<footer>
-    <hr style="margin-bottom: 70px">
-    <div class="container">
-        <div class="footer-content-nav" style="margin-right:200px">
-            <h3>Blog</h3>
-            <ul class="list">
-                <li><a href="/welcome">Home</a></li>
-                <li><a href="/welcome">Rekomendasi</a></li>
-            </ul>
-        </div>
-        <div class="footer-content">
-            <h3>Power By</h3>
-            <ul class="list">
-                <p>Foodies<span>.bdg</span></p>
-            </ul>
-        </div>
-        <div class="footer-content">
-            <h3>Ikuti Kami</h3>
-            <ul class="social-icons">
-                <li>
-                    <a href="https://facebook.com/"><i class="fab fa-facebook"></i></a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/home?lang=id"><i class="fab fa-twitter"></i></a>
-                </li>
-                <li>
-                    <a
-                        href="https://www.instagram.com/xiirpll23/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="><i
-                            class="fab fa-instagram"></i></a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="bottom-bar">
-        <p>Copyright &copy; 2023 QuantumCodeX</p>
-    </div>
-</footer>
-{{-- Footer End --}}
+@include('components.footerdetail')
 
 </html>

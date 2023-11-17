@@ -9,7 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class rekomendasiController extends Controller
+class RekomendasiController extends Controller
 {
     /**
      * index
@@ -23,6 +23,48 @@ class rekomendasiController extends Controller
 
         //render view with rekomendasis
         return view('rekomendasis.index', compact('rekomendasis'));
+    }
+
+    /**
+     * create
+     *
+     * @return View
+     */
+    public function create(): View
+    {
+        return view('rekomendasis.create');
+    }
+
+    /**
+     * store
+     *
+     * @param  mixed $request
+     * @return RedirectResponse
+     */
+    public function store(Request $request): RedirectResponse
+    {
+        //validate form
+        $this->validate($request, [
+            'image'     => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'title'     => 'required|min:5',
+            'deskripsi'     => 'required|min:10',
+            'content'   => 'required|min:10'
+        ]);
+
+        //upload image
+        $image = $request->file('image');
+        $image->storeAs('public/rekomendasi', $image->hashName());
+
+        //create rekomendasi
+        Rekomendasi::create([
+            'image'     => $image->hashName(),
+            'title'     => $request->title,
+            'deskripsi'   =>$request->deskripsi,
+            'content'   => $request->content
+        ]);
+
+        //redirect to index
+        return redirect()->route('rekomendasi.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
     /**
@@ -83,12 +125,46 @@ class rekomendasiController extends Controller
             //update rekomendasi without image
             $rekomendasis->update([
                 'title'     => $request->title,
-                'deskripsi'     => $request->deskripsi,
+                'deskripsi' => $request->deskripsi,
                 'content'   => $request->content
             ]);
         }
 
         //redirect to index
         return redirect()->route('rekomendasi.index')->with(['success' => 'Data Berhasil Diubah!']);
+    }
+
+    /**
+     * destroy
+     *
+     * @param  mixed $rekomendasi
+     * @return void
+     */
+    public function destroy($id): RedirectResponse
+    {
+        //get rekomendasi by ID
+        $rekomendasi = Rekomendasi::findOrFail($id);
+
+        //delete image
+        Storage::delete('public/rekomendasis/'. $rekomendasi->image);
+
+        //delete rekomendasi
+        $rekomendasi->delete();
+
+        //redirect to index
+        return redirect()->route('rekomendasi.index')->with(['success' => 'Data Berhasil Dihapus!']);
+    }
+
+    public function cari(Request $request)
+    {
+        $keyword = $request->input('cari');
+
+        // mengambil data dari table rekomendasi sesuai pencarian data
+        // $rekomendasis = Rekomendasi::where('title', 'like', "%" . $keyword . "%")->paginate(5);
+        $rekomendasis = Rekomendasi::where('title', 'like', "%" . $keyword . "%")->orderBy('id', 'desc')->paginate(5);
+        $rekomendasis->appends(['cari' => $keyword]);
+
+        // mengirim data rekomendasi ke view index
+        return view('rekomendasis.index', compact('rekomendasis'));
     }
 }

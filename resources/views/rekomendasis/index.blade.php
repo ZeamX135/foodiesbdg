@@ -32,9 +32,15 @@
 
 
                         <div class="card-body">
-                            <div style="justify-content: space-between;">
-                                <a href="{{ route('dashboard') }}"
-                                    class="btn btn-md btn-dark mb-3 float-right ms-5">KEMBALI</a>
+                            <div class="d-flex" style="justify-content: space-between;">
+                                {{-- <a href="{{ route('rekomendasi.create') }}" class="btn btn-md btn-success mb-3">TAMBAH
+                                    POST</a> --}}
+
+                                <div class="d-flex w-100" style="justify-content: end">
+
+                                    <a href="{{ route('dashboard') }}"
+                                        class="btn btn-md btn-dark mb-3 float-right ms-2">KEMBALI</a>
+                                </div>
                             </div>
                             <table class="table table-bordered">
                                 <thead>
@@ -62,7 +68,9 @@
                                                     method="POST">
                                                     <a href="{{ route('rekomendasi.edit', $rekomendasi->id) }}"
                                                         class="btn btn-sm btn-primary">EDIT</a>
-                                                    @csrf
+                                                    {{-- @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-sm btn-danger">HAPUS</button> --}}
                                                 </form>
                                             </td>
                                         </tr>

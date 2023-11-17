@@ -182,13 +182,12 @@ body {
 /* Footer */
 footer {
     background: #fff;
-    padding-top: 150px;
+    padding-top: 90px;
 }
 .container {
     width: 1140px;
     margin: auto;
     display: flex;
-    justify-content: center;
 }
 .footer-content {
     width: 50%;
@@ -245,10 +244,10 @@ h3 {
     color: #000000;
 }
 .bottom-bar {
-    background: #118d06;
+    background: #1dc80e;
     text-align: center;
     padding: 10px 0;
-    margin-top: 50px;
+    border-top: solid 2px #000;
 }
 .bottom-bar p {
     color: #000000;
