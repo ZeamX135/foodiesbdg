@@ -34,9 +34,11 @@ class WelcomeController extends Controller
         // mengambil data dari table makanan sesuai pencarian data
         $makanans = Makanan::where('title', 'like', "%" . $keyword . "%")->orderBy('id', 'desc')->paginate(24);
         $makanans->appends(['cari' => $keyword]);
+        $rekomendasis = Rekomendasi::latest()->paginate(4);
+
 
         // mengirim data makanan ke view index
-        return view('welcome', compact('makanans'));
+        return view('welcome', compact('makanans', 'rekomendasis'));
     }
 
     public function store(Request $request): RedirectResponse

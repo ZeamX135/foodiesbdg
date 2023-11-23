@@ -64,7 +64,7 @@
 
     {{-- Content Start --}}
     <h2 style="margin-bottom: 100px" id="rekomendasi"> </h2>
-    <h3 style="margin-top: 100px">ADA YANG RAME NIH!!</h3>
+    <h3 class="text-center" style="margin-top: 100px; font-weight: 800; font-size: 40px">ADA YANG RAME NIH!!</h3>
     <div class="makanan pb-5" style="display: flex; flex-wrap: wrap; width: 93.5rem; background-color: #00AA13 ">
         @foreach ($rekomendasis as $rekomendasi)
             <div style="margin-top: 50px">
@@ -79,7 +79,7 @@
         @endforeach
     </div>
 
-    <h3 style="margin-top: 100px">DAFTAR MAKANAN</h3>
+    <h3 class="text-center" style="margin-top: 100px; font-weight: 800; font-size: 40px"">DAFTAR MAKANAN</h3>
 
     <div class="makanan" style="display: flex; flex-wrap: wrap; width: 93.5rem; ">
         @foreach ($makanans as $makanan)
@@ -104,7 +104,9 @@
     <form action="{{ route('komen.store') }}" method="POST" enctype="multipart/form-data" style="margin-top: 200px">
 
         @csrf <div class="form-group">
-            <h3>BERIKAN MASUKKAN ANDA</h3>
+            <h3 class="text-center" style="margin-top: 100px; font-weight: 800; font-size: 40px; margin-bottom: 80px">
+                BERIKAN MASUKKAN ANDA
+            </h3>
             <textarea class="container form-control @error('content') is-invalid @enderror" name="content" rows="5"
                 placeholder="Masukkan Saran dan Masukkan Anda Di Sini">{{ old('content') }}</textarea>
 
@@ -117,7 +119,7 @@
         </div>
 
         <div class="container pt-2">
-            <button type="submit" style="margin-left: 1060px" class="btn btn-md btn-info">SIMPAN</button>
+            <button type="submit" style="" class="btn btn-md btn-info float-end">SIMPAN</button>
         </div>
 
     </form>

@@ -1,42 +1,41 @@
  {{-- Footer Start --}}
- <footer id="footer" style="border-top: 2px solid black; margin-top: 200px; padding-bottom: 50px">
-     <div class="container">
-         <div class="footer-content-nav" style="width: 200px; margin-right: 150px">
-             <h3>Blog</h3>
-             <ul class="list">
-                 <li><a href="#">Home</a></li>
-                 <li><a href="#rekomendasi">Rekomendasi</a></li>
-                 <li><a href="#komen">Beri Masukkan</a></li>
-             </ul>
-         </div>
-         <div class="footer-content">
-             <h3>Power By</h3>
-             <ul class="list">
-                 <p>Foodies<span>.bdg</span></p>
-             </ul>
-         </div>
-         <div class="footer-content">
-             <h3>Ikuti Kami</h3>
-             <ul class="social-icons">
-                 <li>
-                     <a href="https://facebook.com/"><i class="fab fa-facebook"></i></a>
-                 </li>
-                 <li>
-                     <a href="https://twitter.com/home?lang=id"><i class="fab fa-twitter"></i></a>
-                 </li>
-                 <li>
-                     <a
-                         href="https://www.instagram.com/xiirpll23/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="><i
-                             class="fab fa-instagram"></i></a>
-                 </li>
-                 <li>
-                     <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
-                 </li>
-             </ul>
+ <footer class="footer-distributed">
+
+     <div class="footer-left">
+         <h3><span>Foodies</span>.bdg</h3>
+
+         <p class="footer-company-about">
+
+             <strong>foodies.bdg informasi tentang kuliner dan masakan yang ada di bandung</strong>
+
+
+     </div>
+
+     <div class="footer-center">
+
+     </div>
+     <div class="footer-right">
+
+
+         <p class="footer-links">
+             <a href="#">Home</a>
+             |
+             <a href="#rekomendasi">Rekomendasi</a>
+             |
+             <a href="#komen">Beri Masukkan</a>
+         </p>
+
+
+         <div class="footer-icons">
+             <a href="#"><i class="fa fa-facebook"></i></a>
+             <a href="#"><i class="fa fa-instagram"></i></a>
+             <a href="#"><i class="fa fa-linkedin"></i></a>
+             <a href="#"><i class="fa fa-twitter"></i></a>
+             <a href="#"><i class="fa fa-youtube"></i></a>
          </div>
      </div>
+     <div class="bottom-bar">
+         <p style="color: #fff; font-weight: 500; font-size: 10px">&copy; 2023 QuantumCodeX . Foodies.bdg</p>
+     </div>
  </footer>
- <div class="bottom-bar">
-     <p>Copyright &copy; 2023 QuantumCodeX</p>
- </div>
  {{-- Footer End --}}

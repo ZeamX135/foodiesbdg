@@ -61,7 +61,7 @@
 
                             <div class="form-group">
                                 <label class="font-weight-bold">KONTEN</label>
-                                <textarea class="form-control @error('content') is-invalid @enderror" name="content" rows="5"
+                                <textarea id="content" class="form-control @error('content') is-invalid @enderror" name="content" rows="5"
                                     placeholder="Masukkan Konten Post">{{ old('content') }}</textarea>
 
                                 <!-- error message untuk content -->
@@ -90,7 +90,7 @@
 
     <script>
         tinymce.init({
-            selector: 'textarea',
+            selector: '#content',
             plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
             toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
             tinycomments_mode: 'embedded',
