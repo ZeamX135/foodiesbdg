@@ -27,9 +27,10 @@
 
     <div class="detaildata" style="width: 80%; justify-content: center; margin: auto">
         <div style="display: flex; margin-top: 100px">
-            <img src="{{ asset('/storage/rekomendasi/' . $rekomendasis->image) }}" class="card-img-top">
+            <img src="{{ asset('/storage/rekomendasi/' . $rekomendasis->image) }}"
+                style="object-fit: cover; width: 50rem; margin-right: 50px" class="card-img-top">
             <div style="display: flex;flex-direction: column">
-                <h1>{{ $rekomendasis->title }}</h1>
+                <h1 style="margin-bottom: 40px; font-weight: 600">{{ $rekomendasis->title }}</h1>
                 <h5>{{ $rekomendasis->deskripsi }}</h5>
             </div>
         </div>

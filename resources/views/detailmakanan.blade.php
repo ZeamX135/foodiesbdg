@@ -38,13 +38,14 @@
 
     <div class="detaildata" style="width: 80%; justify-content: center; margin: auto">
         <div style="display: flex; margin-top: 100px">
-            <img src="{{ asset('/storage/makanan/' . $makanans->image) }}" class="card-img-top">
+            <img src="{{ asset('/storage/makanan/' . $makanans->image) }}"
+                style="object-fit: cover; width: 50rem; margin-right: 50px" class="card-img-top">
             <div style="display: flex;flex-direction: column">
-                <h1>{{ $makanans->title }}</h1>
+                <h1 style="margin-bottom: 40px; font-weight: 600">{{ $makanans->title }}</h1>
                 <h5>{{ $makanans->deskripsi }}</h5>
             </div>
         </div>
-        <p style="margin-top: 40px;">{!! $makanans->content !!}</p>
+        <div style="margin-top: 40px; width: 90%">{!! $makanans->content !!}</div>
     </div>
 </body>
 
