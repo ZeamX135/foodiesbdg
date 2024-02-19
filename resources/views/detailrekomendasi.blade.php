@@ -40,4 +40,5 @@
 
 @include('components.footerdetail')
 
+
 </html>

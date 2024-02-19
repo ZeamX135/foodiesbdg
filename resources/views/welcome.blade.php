@@ -65,12 +65,12 @@
     {{-- Content Start --}}
     <h2 style="margin-bottom: 100px" id="rekomendasi"> </h2>
     <h3 class="text-center" style="margin-top: 100px; font-weight: 800; font-size: 40px">ADA YANG RAME NIH!!</h3>
-    <div class="makanan pb-5" style="display: flex; flex-wrap: wrap; width: 93.5rem; background-color: #00AA13 ">
+    <div class="pb-5 makanan" style="display: flex; flex-wrap: wrap; width: 100%; background-color: #c2ffc9 ">
         @foreach ($rekomendasis as $rekomendasi)
             <div style="margin-top: 50px">
-                <a href="{{ route('detailrekomendasi', $rekomendasi->id) }}"><img
+                <a style="border: #000 5px;" href="{{ route('detailrekomendasi', $rekomendasi->id) }}"><img
                         src="{{ asset('/storage/rekomendasi/' . $rekomendasi->image) }}"
-                        class="card-img-top contentimg"></a>
+                        class="border card-img-top contentimg border-dark"></a>
                 <div class="card-body contenttitle">
                     <a href="{{ route('detailrekomendasi', $rekomendasi->id) }}" h5
                         class="card-text">{{ $rekomendasi->title }}</a>
@@ -81,7 +81,7 @@
 
     <h3 class="text-center" style="margin-top: 100px; font-weight: 800; font-size: 40px"">DAFTAR MAKANAN</h3>
 
-    <div class="makanan" style="display: flex; flex-wrap: wrap; width: 93.5rem; ">
+    <div class="mx-auto makanan" style="display: flex; flex-wrap: wrap; width: 93.5rem; ">
         @foreach ($makanans as $makanan)
             <div class="" style="margin-top: 50px">
                 <a href="{{ route('detailmakanan', $makanan->id) }}"><img
@@ -112,7 +112,7 @@
 
             <!-- error message untuk content -->
             @error('content')
-                <div class="alert alert-danger mt-2">
+                <div class="mt-2 alert alert-danger">
                     {{ $message }}
                 </div>
             @enderror

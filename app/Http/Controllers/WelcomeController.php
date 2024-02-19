@@ -13,7 +13,7 @@ class WelcomeController extends Controller
     public function index()
     {
         $rekomendasis = Rekomendasi::latest()->paginate(4);
-        $makanans = Makanan::latest()->paginate(24);
+        $makanans = Makanan::paginate(24);
         return view('welcome', compact ('rekomendasis','makanans'));
     }
     public function detailrekomendasi($id)
