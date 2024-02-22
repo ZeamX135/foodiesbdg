@@ -13,7 +13,7 @@ class DashboardController extends Controller
     public function index(): View
     {
         //get posts
-        $komen = Komen::latest()->paginate(5);
+        $komen = Komen::latest()->paginate(10);
         $title = 'Delete Data!';
         $text = "Are you sure you want to delete?";
         confirmDelete($title, $text);
